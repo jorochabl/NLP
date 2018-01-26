@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+## Example of Natural Language processing (Sentiment Analysis)
 
-You can use the [editor on GitHub](https://github.com/jorochabl/NLP/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+In this example, it's shown how to treat and train various models to analyze user reviews from Amazon. As trainset comments have a user value (from 1 to 5 stars), but we mostly want to know if a comment is positive or negative, we'll reduce it to a binary classification model:
+- **1 to 3** --> user review is negative, dislikes the product.
+- **4 to 5** --> user review is positive, likes the product.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jorochabl/NLP/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+As text valoration mechanism is based on how frequently meningful words appear, a number of techniques are to be put in place prior to train *sentiment analysys* machine learning models:
+- `NLTK` --> toolkit for *stemming* (taking out meaningful, common parts of each word), as well as language detection (stems are different for each language). Stop words and non-words symbols are also put in place to reduce meaningless symbols and words.
+- `CountVectorize` --> from `sklearn` library, it's used convert each user review into a sparse matrix, to be passed to machine learning models.
+- `sklearn` models --> once pre processed, we'll train and test later on our models, both assuming all text is in Spanish and analyzing each comment's language first (*tokenizer* to split into meaningful word stems accepts a certain language dependant *stemmer*).
+- *Dictionaries* --> both to handle functions (stemmers) and parameters / datasets, and to embrace model results for evaluation. Pretty *tricky* but, once reviewd, easy to understand.
