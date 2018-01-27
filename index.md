@@ -9,3 +9,7 @@ As text valoration mechanism is based on how frequently meningful words appear, 
 - `CountVectorize` --> from `sklearn` library, it's used convert each user review into a sparse matrix, to be passed to machine learning models.
 - `sklearn` models --> once pre processed, we'll train and test later on our models, both assuming all text is in Spanish and analyzing each comment's language first (*tokenizer* to split into meaningful word stems accepts a certain language dependant *stemmer*).
 - *Dictionaries* --> both to handle functions (stemmers) and parameters / datasets, and to embrace model results for evaluation. Pretty *tricky* but, once reviewd, easy to understand.
+
+### Datasets
+
+Heavy datasets area used, should you want a copy let me know at jorge.rocha.blanco@gmail.com
